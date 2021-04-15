@@ -1971,10 +1971,10 @@ namespace System.Configuration
         {
             if (!skipFirstIndent) utilWriter.AppendSpacesToLinePosition(linePosition);
 
-            utilWriter.Write("<configSections>\r\n");
+            utilWriter.Write("<configSections>" + NewLine);
             WriteUnwrittenConfigDeclarations(declarationUpdates, utilWriter, linePosition + indent, indent, false);
             utilWriter.AppendSpacesToLinePosition(linePosition);
-            utilWriter.Write("</configSections>\r\n");
+            utilWriter.Write("</configSections>" + NewLine);
 
             if (skipFirstIndent) utilWriter.AppendSpacesToLinePosition(linePosition);
         }
@@ -2033,7 +2033,7 @@ namespace System.Configuration
                 WriteUnwrittenConfigDeclarationsRecursive(declarationUpdatesChild, utilWriter, linePosition + indent,
                     indent, false);
                 utilWriter.AppendSpacesToLinePosition(linePosition);
-                utilWriter.Write("</sectionGroup>\r\n");
+                utilWriter.Write("</sectionGroup>" + NewLine);
             }
         }
 
@@ -2142,7 +2142,7 @@ namespace System.Configuration
                     if (!skipFirstIndent) utilWriter.AppendSpacesToLinePosition(linePosition);
                     skipFirstIndent = false;
 
-                    utilWriter.Write("<" + group + ">\r\n");
+                    utilWriter.Write("<" + group + ">" + NewLine);
                     bool recurseWroteASection = WriteNewConfigDefinitionsRecursive(
                         utilWriter, sectionUpdates.GetSectionUpdatesForGroup(group), linePosition + indent, indent,
                         false);
@@ -2150,7 +2150,7 @@ namespace System.Configuration
                     if (recurseWroteASection) wroteASection = true;
 
                     utilWriter.AppendSpacesToLinePosition(linePosition);
-                    utilWriter.Write("</" + group + ">\r\n");
+                    utilWriter.Write("</" + group + ">" + NewLine);
                 }
             }
 

@@ -22,7 +22,7 @@ namespace System.Configuration
     internal sealed class XmlUtilWriter
     {
         private const char Space = ' ';
-        private const string NewLine = "\r\n";
+        private const string NewLine = Environment.NewLine;
 
         private static readonly string s_spaces8 = new string(Space, 8);
         private static readonly string s_spaces4 = new string(Space, 4);
