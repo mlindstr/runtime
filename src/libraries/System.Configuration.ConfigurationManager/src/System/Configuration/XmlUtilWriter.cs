@@ -22,7 +22,6 @@ namespace System.Configuration
     internal sealed class XmlUtilWriter
     {
         private const char Space = ' ';
-        private const string NewLine = Environment.NewLine;
 
         private static readonly string s_spaces8 = new string(Space, 8);
         private static readonly string s_spaces4 = new string(Space, 4);
@@ -283,7 +282,7 @@ namespace System.Configuration
 
         internal int AppendNewLine()
         {
-            return Write(NewLine);
+            return Write(Environment.NewLine);
         }
 
         // Write spaces to the writer provided.  Since we do not want waste

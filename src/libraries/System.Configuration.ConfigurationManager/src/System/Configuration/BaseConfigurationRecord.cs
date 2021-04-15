@@ -18,8 +18,6 @@ namespace System.Configuration
     [DebuggerDisplay("ConfigPath = {ConfigPath}")]
     internal abstract class BaseConfigurationRecord : IInternalConfigRecord
     {
-        protected const string NewLine = Environment.NewLine;
-
         internal const string KeywordTrue = "true";
         internal const string KeywordFalse = "false";
 
@@ -65,17 +63,17 @@ namespace System.Configuration
         protected const string ConfigSourceAttribute = "configSource";
         internal const string ProtectionProviderAttibute = "configProtectionProvider";
 
-        protected const string FormatNewConfigFile = "<?xml version=\"1.0\" encoding=\"{0}\"?>" + NewLine;
-        protected const string FormatConfiguration = "<configuration>" + NewLine;
-        protected const string FormatConfigurationNamespace = "<configuration xmlns=\"{0}\">" + NewLine;
+        protected const string FormatNewConfigFile = "<?xml version=\"1.0\" encoding=\"{0}\"?>" + Environment.NewLine;
+        protected const string FormatConfiguration = "<configuration>" + Environment.NewLine;
+        protected const string FormatConfigurationNamespace = "<configuration xmlns=\"{0}\">" + Environment.NewLine;
         protected const string FormatConfigurationEndElement = "</configuration>";
 
-        protected const string FormatLocationNoPath = "<location {0} inheritInChildApplications=\"{1}\">" + NewLine;
-        protected const string FormatLocationPath = "<location path=\"{2}\" {0} inheritInChildApplications=\"{1}\">" + NewLine;
+        protected const string FormatLocationNoPath = "<location {0} inheritInChildApplications=\"{1}\">" + Environment.NewLine;
+        protected const string FormatLocationPath = "<location path=\"{2}\" {0} inheritInChildApplications=\"{1}\">" + Environment.NewLine;
         protected const string FormatLocationEndElement = "</location>";
         internal const string KeywordLocationOverrideModeString = "{0}=\"{1}\"";
         protected const string FormatSectionConfigSource = "<{0} configSource=\"{1}\" />";
-        protected const string FormatConfigSourceFile = "<?xml version=\"1.0\" encoding=\"{0}\"?>" + NewLine;
+        protected const string FormatConfigSourceFile = "<?xml version=\"1.0\" encoding=\"{0}\"?>" + Environment.NewLine;
         protected const string FormatSectionGroupEndElement = "</sectionGroup>";
 
         // Class flags should only be used with the ClassFlags property.

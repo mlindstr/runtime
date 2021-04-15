@@ -1971,10 +1971,10 @@ namespace System.Configuration
         {
             if (!skipFirstIndent) utilWriter.AppendSpacesToLinePosition(linePosition);
 
-            utilWriter.Write("<configSections>" + NewLine);
+            utilWriter.Write("<configSections>" + Environment.NewLine);
             WriteUnwrittenConfigDeclarations(declarationUpdates, utilWriter, linePosition + indent, indent, false);
             utilWriter.AppendSpacesToLinePosition(linePosition);
-            utilWriter.Write("</configSections>" + NewLine);
+            utilWriter.Write("</configSections>" + Environment.NewLine);
 
             if (skipFirstIndent) utilWriter.AppendSpacesToLinePosition(linePosition);
         }
@@ -2033,7 +2033,7 @@ namespace System.Configuration
                 WriteUnwrittenConfigDeclarationsRecursive(declarationUpdatesChild, utilWriter, linePosition + indent,
                     indent, false);
                 utilWriter.AppendSpacesToLinePosition(linePosition);
-                utilWriter.Write("</sectionGroup>" + NewLine);
+                utilWriter.Write("</sectionGroup>" + Environment.NewLine);
             }
         }
 
@@ -2142,7 +2142,7 @@ namespace System.Configuration
                     if (!skipFirstIndent) utilWriter.AppendSpacesToLinePosition(linePosition);
                     skipFirstIndent = false;
 
-                    utilWriter.Write("<" + group + ">" + NewLine);
+                    utilWriter.Write("<" + group + ">" + Environment.NewLine);
                     bool recurseWroteASection = WriteNewConfigDefinitionsRecursive(
                         utilWriter, sectionUpdates.GetSectionUpdatesForGroup(group), linePosition + indent, indent,
                         false);
@@ -2150,7 +2150,7 @@ namespace System.Configuration
                     if (recurseWroteASection) wroteASection = true;
 
                     utilWriter.AppendSpacesToLinePosition(linePosition);
-                    utilWriter.Write("</" + group + ">" + NewLine);
+                    utilWriter.Write("</" + group + ">" + Environment.NewLine);
                 }
             }
 
@@ -3152,7 +3152,7 @@ namespace System.Configuration
             string formattedXml = XmlUtil.FormatXmlElement(updatedXml, 0, indent, true);
             utilWriter.Write(string.Format(CultureInfo.InvariantCulture, FormatConfigSourceFile,
                 ConfigStreamInfo.StreamEncoding.WebName));
-            utilWriter.Write(formattedXml + NewLine);
+            utilWriter.Write(formattedXml + Environment.NewLine);
         }
 
         private static string BoolToString(bool v)
